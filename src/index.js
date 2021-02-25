@@ -3,7 +3,7 @@ const cors = require("cors");
 const nodemailer = require("nodemailer");
 const multer = require("multer");
 const multerConfig = require("./config/multer");
-const http = require("http");
+// const http = require("http");
 // const path = require("path");
 
 const app = express();
@@ -274,7 +274,7 @@ app.post("/sendEmailConsorcio", cors(), (req, res, next) => {
                 '<td height="40"><font face="Calibri" color="#a30d1d" style="font-size:14px">www.jle2corretora.com | Redes Sociais: <img src= "">instagram.com/jl_corretora | facebook.com/corretoraJL</font></td>'+
               '</tr>'+
               '<tr>'+	  
-                '<td><img src="http://127.0.0.1:5500/wp-content/uploads/2019/08/logo.png" border="0" style="display:block;"></td>'+
+                '<td><img src="https://jle2corretora.com/wp-content/uploads/2019/08/logo.png" border="0" style="display:block;"></td>'+
               '</tr>'+
               '<tr>'+
                 '<td height="30"></td>'+
@@ -305,8 +305,7 @@ app.post("/sendEmailConsorcio", cors(), (req, res, next) => {
 });
 
 const PORT = process.env.PORT || 3000;
-const server = http.createServer();
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log("SERVIDOR INCIADO | PORTA: " + PORT);
 });
 
