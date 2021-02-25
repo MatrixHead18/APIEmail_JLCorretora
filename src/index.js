@@ -153,7 +153,7 @@ app.post("/sendContact", cors(), (req, res, next) => {
 
     let emailASerEnviado = {
       from: 'JL Corretora <corretorajle2@gmail.com>',
-      to: 'augustog614@gmail.com',
+      to: 'contato@jle.com',
       subject: 'Alguém com o nome: ' + nomecompleto + ' está entrando em contato com a JL Corretora',
       text: 'Email de contato chegando...',
 
@@ -242,7 +242,7 @@ app.post("/sendEmailConsorcio", cors(), (req, res, next) => {
 
     let emailASerEnviado = {
       from: 'JL Corretora <corretorajle2@gmail.com>',
-      to: 'augustog614@gmail.com',
+      to: 'contato@jle.com',
       subject: 'Nova simulação de consórcio',
       text: 'simulação de consórcio chegando...',
 
