@@ -3,6 +3,7 @@ const cors = require("cors");
 const nodemailer = require("nodemailer");
 const multer = require("multer");
 const multerConfig = require("./config/multer");
+const http = require("http");
 // const path = require("path");
 
 const app = express();
@@ -303,8 +304,9 @@ app.post("/sendEmailConsorcio", cors(), (req, res, next) => {
   }
 });
 
-const PORT = 3000;
-app.listen(PORT, () => {
+const PORT = process.env.PORT || 3000;
+const server = http.createServer();
+server.listen(PORT, () => {
   console.log("SERVIDOR INCIADO | PORTA: " + PORT);
 });
 
