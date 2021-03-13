@@ -64,7 +64,7 @@ app.post("/sendEmail", multer(multerConfig).single("file"), (req, res) => {
 
     let emailASerEnviado = {
       from: 'JL Corretora <corretorajle2@gmail.com>',
-      to: 'contato@jle.com',
+      to: 'contato@jle2corretora.com',
       subject: 'Curriculo ' + nomecompleto,
       text: 'Curriculo chegando...',
       attachments: [{
@@ -97,7 +97,7 @@ app.post("/sendEmail", multer(multerConfig).single("file"), (req, res) => {
                '<td height="40"><font face="Calibri" color="#a30d1d" style="font-size:14px">www.jle2corretora.com | Redes Sociais: @jl_corretora | facebook.com/corretoraJL</font></td>'+
              '</tr>'+
              '<tr>'+	  
-               '<td><img src="http://127.0.0.1:5500/wp-content/uploads/2019/08/logo.png" border="0" style="display:block;"></td>'+
+               '<td><img src="http://www.jle2corretora.com/wp-content/uploads/2019/08/logo.png" border="0" style="display:block;"></td>'+
              '</tr>'+
              '<tr>'+
                '<td height="30"></td>'+
@@ -153,7 +153,7 @@ app.post("/sendContact", cors(), (req, res, next) => {
 
     let emailASerEnviado = {
       from: 'JL Corretora <corretorajle2@gmail.com>',
-      to: 'contato@jle.com',
+      to: 'contato@jle2corretora.com',
       subject: 'Alguém com o nome: ' + nomecompleto + ' está entrando em contato com a JL Corretora',
       text: 'Email de contato chegando...',
 
@@ -182,7 +182,7 @@ app.post("/sendContact", cors(), (req, res, next) => {
               '<td height="40"><font face="Calibri" color="#a30d1d" style="font-size:14px">www.jle2corretora.com | Redes Sociais: instagram.com/jl_corretora | facebook.com/corretoraJL</font></td>'+
             '</tr>'+
             '<tr>'+	  
-              '<td><img src="http://127.0.0.1:5500/wp-content/uploads/2019/08/logo.png" border="0" style="display:block;"></td>'+
+              '<td><img src="http://www.jle2corretora.com/wp-content/uploads/2019/08/logo.png" border="0" style="display:block;"></td>'+
             '</tr>'+
             '<tr>'+
               '<td height="30"></td>'+
@@ -242,7 +242,7 @@ app.post("/sendEmailConsorcio", cors(), (req, res, next) => {
 
     let emailASerEnviado = {
       from: 'JL Corretora <corretorajle2@gmail.com>',
-      to: 'contato@jle.com',
+      to: 'contato@jle2corretora.com',
       subject: 'Nova simulação de consórcio',
       text: 'simulação de consórcio chegando...',
 
@@ -274,7 +274,7 @@ app.post("/sendEmailConsorcio", cors(), (req, res, next) => {
                 '<td height="40"><font face="Calibri" color="#a30d1d" style="font-size:14px">www.jle2corretora.com | Redes Sociais: <img src= "">instagram.com/jl_corretora | facebook.com/corretoraJL</font></td>'+
               '</tr>'+
               '<tr>'+	  
-                '<td><img src="https://jle2corretora.com/wp-content/uploads/2019/08/logo.png" border="0" style="display:block;"></td>'+
+                '<td><img src="http://www.jle2corretora.com/wp-content/uploads/2019/08/logo.png" border="0" style="display:block;"></td>'+
               '</tr>'+
               '<tr>'+
                 '<td height="30"></td>'+
