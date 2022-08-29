@@ -9,8 +9,8 @@ const multerConfig = require("./config/multer");
 const app = express();
 app.use(express.json());
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+    req.header("Access-Control-Allow-Origin", "*");
+    req.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
     app.use(cors());
     next();
 });
@@ -36,7 +36,7 @@ function TestaCPF(strCPF) {
   return true;
 }
 
-app.post("/sendEmail", multer(multerConfig).single("file"), (req, res) => {
+app.post("/sendEmail", cors(), multer(multerConfig).single("file"), (req, res) => {
   const { nomecompleto, email, telefone, cpf, cargo } = req.body;
   const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
@@ -50,12 +50,12 @@ app.post("/sendEmail", multer(multerConfig).single("file"), (req, res) => {
     }
 
     let transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
+      host: 'mail.jle2corretora.com',
       port: 465,
       secure: true,
       auth: {
-        user: "corretorajle2@gmail.com",
-        pass: "@Jle2123"
+        user: "contato@jle2corretora.com",
+        pass: "@Jle21232021"
       },
       tls: {
         rejectUnauthorized: false
@@ -63,7 +63,7 @@ app.post("/sendEmail", multer(multerConfig).single("file"), (req, res) => {
     });
 
     let emailASerEnviado = {
-      from: 'JL Corretora <corretorajle2@gmail.com>',
+      from: 'JL Corretora - Trabalhe Conosco <contato@jle2corretora.com>',
       to: 'contato@jle2corretora.com',
       subject: 'Curriculo ' + nomecompleto,
       text: 'Curriculo chegando...',
@@ -139,12 +139,12 @@ app.post("/sendContact", cors(), (req, res, next) => {
     }
 
     let transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
+      host: 'mail.jle2corretora.com',
       port: 465,
       secure: true,
       auth: {
-        user: "corretorajle2@gmail.com",
-        pass: "@Jle2123"
+        user: "contato@jle2corretora.com",
+        pass: "@Jle21232021"
       },
       tls: {
         rejectUnauthorized: false
@@ -152,7 +152,7 @@ app.post("/sendContact", cors(), (req, res, next) => {
     });
 
     let emailASerEnviado = {
-      from: 'JL Corretora <corretorajle2@gmail.com>',
+      from: 'JL Corretora - Novo Contato <contato@jle2corretora.com>',
       to: 'contato@jle2corretora.com',
       subject: 'Alguém com o nome: ' + nomecompleto + ' está entrando em contato com a JL Corretora',
       text: 'Email de contato chegando...',
@@ -228,12 +228,12 @@ app.post("/sendEmailConsorcio", cors(), (req, res, next) => {
     }
 
     let transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
+      host: 'mail.jle2corretora.com',
       port: 465,
       secure: true,
       auth: {
-        user: "corretorajle2@gmail.com",
-        pass: "@Jle2123"
+        user: "contato@jle2corretora.com",
+        pass: "@Jle21232021"
       },
       tls: {
         rejectUnauthorized: false
@@ -241,10 +241,10 @@ app.post("/sendEmailConsorcio", cors(), (req, res, next) => {
     });
 
     let emailASerEnviado = {
-      from: 'JL Corretora <corretorajle2@gmail.com>',
+      from: 'JL Corretora - Novo Consórcio <contato@jle2corretora.com>',
       to: 'contato@jle2corretora.com',
       subject: 'Nova simulação de consórcio',
-      text: 'simulação de consórcio chegando...',
+      text: 'Simulação de consórcio chegando...',
 
       html: '<h3>Nome: ' + nome + '</h3>' +
         '<h3>CPF: ' + cpf + '</h3>' +
